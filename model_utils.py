@@ -1,7 +1,8 @@
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
-from keras.models import Sequential
-from keras.layers import LSTM, Dense
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import LSTM, Dense
+
 
 def prepare_data(df, window=60):
     data = df['Close'].values.reshape(-1, 1)
