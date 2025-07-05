@@ -38,7 +38,12 @@ with feature3:
 
 # Sidebar
 st.sidebar.header("🔧 Settings")
-symbols_input = st.sidebar.text_input("Enter Stock Symbols (comma separated)", value="AAPL,GOOGL")
+symbols_input = st.sidebar.text_input(
+    "Enter Stock Symbols (comma separated)",
+    value="RELIANCE.NS, AAPL",
+    help="For Indian stocks, add .NS (e.g., RELIANCE.NS, TCS.NS)"
+)
+st.sidebar.caption("📌 For Indian stocks, add  '.NS' (e.g., RELIANCE.NS for Reliance Industries)")
 symbols = [s.strip().upper() for s in symbols_input.split(',') if s.strip()]
 start_date = st.sidebar.date_input("Start Date", datetime.date(2020, 1, 1))
 end_date = st.sidebar.date_input("End Date", datetime.date.today())
