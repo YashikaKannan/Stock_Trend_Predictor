@@ -111,7 +111,7 @@ for symbol in symbols:
     X_test = X[-prediction_days:]
 
     model = build_lstm((X.shape[1], 1))
-    model.fit(X_train, y_train, epochs=50, batch_size=16, verbose=0)
+    model.fit(X_train, y_train, epochs=5, batch_size=32, verbose=0)
 
     predicted_scaled = model.predict(X_test)
     predicted = scaler.inverse_transform(predicted_scaled)
